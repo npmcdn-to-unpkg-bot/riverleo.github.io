@@ -3,7 +3,7 @@ import { Component } from 'react'
 export default class NoMatch extends Component {
   render () {
     return (
-      <div>no match</div>
+      <div id="no-match">no match</div>
     )
   }
 }

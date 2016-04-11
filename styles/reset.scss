@@ -2,4 +2,18 @@
 
 html, body, main {
   height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fbfbfb;
+}
+
+a {
+  background-color: inherit;
+
+  &:active, &:hover, &:focus, &.active {
+    background-color: inherit;
+  }
+}
+
+main {
+  height: 30000px;
 }

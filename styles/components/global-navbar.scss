@@ -1,0 +1,163 @@
+@import 'bourbon';
+@import '../contrib/responsive';
+
+#global-navbar {
+  .container {
+    width: auto;
+    text-align: center;
+  }
+
+  .navbar,
+  .navbar-brand {
+    height: auto;
+    min-height: auto;
+  }
+
+  .navbar {
+    margin: 0;
+    padding: 22px 0;
+    background-color: white;
+    border-color: #f1f1f1;
+    @include transition(0.2s);
+  }
+
+  a,
+  .navbar-brand {
+    padding: 0;
+  }
+
+  a {
+    background-color: transparent;
+  }
+
+  .navbar-brand,
+  .navbar-right .about {
+    top: 50%;
+    position: absolute;
+    @include transform(translateY(-50%));
+    @include transition(0.2s);
+  }
+
+  .navbar-brand {
+    left: 20px;
+    margin-left: 0;
+    color: #2a2a2a;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Ubuntu', sans-serif;
+
+    @include respond-to(xs) {
+      font-size: 20px;
+    }
+  }
+
+  .navbar-right .about {
+    right: 20px;
+
+    a {
+      width: 34px;
+      height: 34px;
+      color: #2a2a2a;
+      font-size: 18px;
+      background-color: #c1c1c1;
+      border-radius: 50%;
+      @include transition(0.2s);
+      opacity: 0.5;
+
+      @include respond-to(xs) {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &.active a {
+      opacity: 1;
+    }
+
+    i {
+      margin-top: 7px;
+    }
+  }
+
+  .navbar-center {
+    position: relative;
+    text-transform: uppercase;
+
+    @include respond-to(xs) {
+      position: absolute;
+      width: 100%;
+      top: 60px;
+      left: 0;
+      margin: 0;
+      padding: 12px 0;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      background-color: white;
+    }
+
+    &,
+    li {
+      float: initial;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    li {
+      @include transition(0.2s);
+
+      a {
+        padding: 0 8px;
+        color: #c1c1c1;
+        font-size: 14px;
+        font-weight: 300;
+        @include transition(0.2s);
+
+        &:hover {
+          color: #555;
+          padding: 0 10px;
+          @include transform(scale(1.2));
+        }
+      }
+
+      &.active a {
+        color: #2a2a2a;
+        font-weight: 600;
+          @include transform(scale(1));
+      }
+    }
+  }
+}
+
+/* =================================================
+ * Scroll Animation
+ * ================================================= */
+
+#global-navbar {
+  @include responds-to(sm, md, lg) {
+    &:not(.top).down .navbar {
+      padding: 10px 0;
+    }
+
+    &:not(.top).down .navbar-brand {
+      left: -100px;
+    }
+
+    &:not(.top).down .navbar-center {
+      @include transform(scale(0.92));
+    }
+
+    &:not(.top).down .navbar-right .about {
+      right: -100px;
+    }
+  }
+
+  @include respond-to(xs) {
+    &:not(.top).down .navbar {
+      top: -60px;
+    }
+  }
+}
