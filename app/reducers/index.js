@@ -1,14 +1,7 @@
 import { combineReducers } from 'redux'
 import { routerReducer as routing } from 'react-router-redux'
-
-/* ========================================================
- * Global Reducers
- * ======================================================== */
-
-/* ========================================================
- * Container Reducers
- * ======================================================== */
+import instagram from './instagram-reducer'
 
 export default combineReducers({
-  routing
+  routing, instagram
 })

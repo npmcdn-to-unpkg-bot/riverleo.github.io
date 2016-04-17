@@ -3,6 +3,8 @@ import 'styles/components/global-navbar.scss'
 import $ from 'jquery'
 import _ from 'lodash'
 import cn from 'classnames'
+import store from 'store'
+import { sprintf } from 'underscore.string'
 
 import { Component } from 'react'
 import { Link } from 'react-router'
@@ -28,6 +30,7 @@ export default class GlobalNavbar extends Component {
 
   render () {
     const { top, down } = this.state || {}
+    const { me } = store.getState().instagram
 
     return (
       <div id="global-navbar" className={ cn({ top, [down ? 'down' : 'up']: true }) }>
@@ -50,8 +53,9 @@ export default class GlobalNavbar extends Component {
           </Nav>
           <Nav right>
             <LinkContainer to="/about">
-              <NavItem className="about text-hide">
-                <i className="fa fa-user"/>
+              <NavItem className="about"
+              style={{ backgroundImage: sprintf('url("%s")', me.profile_picture) }}>
+                <span className="text-hide">profile</span>
               </NavItem>
             </LinkContainer>
           </Nav>
