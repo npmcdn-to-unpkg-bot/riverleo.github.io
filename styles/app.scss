@@ -1,15 +1,16 @@
 @import 'contrib/responsive';
 
 #app {
-  height: 100%;
-  padding-top: 83px;
-
   @include respond-to(xs) {
     padding-top: 104px;
   }
 }
 
 .react-container {
-  min-height: 100%;
+  padding-top: 83px;
+}
+
+#contents {
   padding-bottom: 50px;
+  background-color: transparent;
 }

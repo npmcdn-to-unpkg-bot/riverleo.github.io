@@ -14,20 +14,22 @@ export class App extends Component {
   }
 
   render () {
-    const { children, instagram } = this.props
-    const { meStatus } = instagram
+    const { children } = this.props
 
-    if (!_.isEqual(meStatus, 'success')) {
-      return <div/>
+    var containerName = _.kebabCase(children.type.name)
+    if (!_.isEmpty(children.type.displayName)) {
+      containerName = _.kebabCase(children.type.displayName.match(/\([a-zA-Z0-9]+\)/g))
     }
 
     return (
       <div id="app">
-        <GlobalNavbar/>
-        <div className="react-container">
-          { children }
+        <div id={ containerName } className="react-container">
+          <GlobalNavbar/>
+          <div id="contents">
+            { children }
+          </div>
+          <GlobalFooter/>
         </div>
-        <GlobalFooter/>
       </div>
     )
   }

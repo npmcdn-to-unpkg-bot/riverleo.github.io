@@ -18,7 +18,6 @@
     padding: 30px 0;
     background-color: white;
     border-color: #f1f1f1;
-    @include transition(0.2s);
   }
 
   a,
@@ -99,19 +98,16 @@
         color: #c1c1c1;
         font-size: 14px;
         font-weight: 300;
-        @include transition(0.2s);
+        @include transition(0.2s color);
 
         &:hover {
           color: #555;
-          padding: 0 10px;
-          @include transform(scale(1.2));
         }
       }
 
       &.active a {
         color: #2a2a2a;
         font-weight: 600;
-          @include transform(scale(1));
       }
     }
   }
