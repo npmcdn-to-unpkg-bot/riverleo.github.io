@@ -1,4 +1,8 @@
 #objectified {
+  .panel {
+    margin: 0;
+  }
+
   .panel-body {
     position: relative;
     padding-bottom: 90%;
@@ -6,6 +10,22 @@
   }
 
   .panel-footer {
+    padding: 10px 0;
     text-align: center;
+
+    dl {
+      margin: 0;
+    }
+
+    dt {
+      font-size: 20px;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    dd {
+      opacity: 0.5;
+    }
   }
 }

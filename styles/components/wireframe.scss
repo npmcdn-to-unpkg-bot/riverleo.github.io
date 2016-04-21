@@ -20,22 +20,24 @@
   .w-navbar-right,
   .w-navbar-center {
     top: 10px;
-    width: 15%;
+    width: 30px;
     height: 30px;
   }
 
   .w-navbar-left {
     left: 10px;
+    border-radius: 50%;
   }
 
   .w-navbar-center {
-    left: 20%;
-    right: 20%;
+    left: 50px;
+    right: 70px;
     width: auto;
     height: 30px;
   }
 
   .w-navbar-right {
+    width: 50px;
     right: 10px;
   }
 
@@ -71,7 +73,7 @@
     }
   }
 
-  .w-aside-left {
+  .w-aside {
     top: 130px;
     left: 0;
     bottom: 50px;
@@ -124,18 +126,24 @@
         height: 30px;
       }
 
-      .w-text.username {
-        top: 2px;
-        left: 35px;
-        right: initial;
-        width: 30%;
-      }
+      .w-summary {
+        left: 30px;
+        right: 10px;
+        height: 30px;
+        border: 0;
+        background-color: transparent;
 
-      .w-text.summary {
-        top: 16px;
-        left: 35px;
-        right: initial;
-        width: 60%;
+        .w-text:nth-child(1) {
+          top: 2px;
+          right: initial;
+          width: 30%;
+        }
+
+        .w-text:nth-child(2) {
+          top: 16px;
+          right: initial;
+          width: 60%;
+        }
       }
     }
 
@@ -184,4 +192,33 @@
       border-radius: 50%;
     }
   }
+}
+
+/* ========================================================================
+ * Active, Focus
+ * ======================================================================== */
+
+#objectified {
+  @include transition(0.2s);
+
+  &.object-focus {
+    background-color: #1a1a1a;
+  }
+}
+
+.wireframe .block.active,
+.wireframe .active .block {
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.object:hover .wireframe .block.active,
+.object:hover .wireframe .active .block {
+  border-color: #FF4949;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.object:hover .panel-footer dt,
+.object:hover .panel-footer dd {
+  color: white;
 }

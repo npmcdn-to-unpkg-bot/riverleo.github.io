@@ -16,8 +16,9 @@
   .navbar {
     margin: 0;
     padding: 30px 0;
-    background-color: white;
+    background-color: transparent;
     border-color: #f1f1f1;
+    @include transition(0.4s border-color);
   }
 
   a,
@@ -140,5 +141,21 @@
     &:not(.top).down .navbar {
       top: -60px;
     }
+  }
+}
+
+/* =================================================
+ * Black Skin
+ * ================================================= */
+
+#home #global-navbar,
+#objectified.object-focus #global-navbar {
+  .navbar {
+    border-bottom-color: transparent;
+  }
+
+  .navbar-brand,
+  .navbar-center li.active a {
+    color: white;
   }
 }

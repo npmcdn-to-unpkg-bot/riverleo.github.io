@@ -2,6 +2,7 @@ import 'styles/reset.scss'
 import 'styles/app.scss'
 
 import _ from 'lodash'
+import classNames from 'classnames'
 import { connect } from 'react-redux'
 import { instagram } from 'actions'
 
@@ -14,16 +15,17 @@ export class App extends Component {
   }
 
   render () {
-    const { children } = this.props
+    const { children, objectified, location } = this.props
+    const { pathname } = location
 
-    var containerName = _.kebabCase(children.type.name)
-    if (!_.isEmpty(children.type.displayName)) {
-      containerName = _.kebabCase(children.type.displayName.match(/\([a-zA-Z0-9]+\)/g))
-    }
+    let index = pathname.lastIndexOf('/')
+    var containerName = _.kebabCase(pathname.substring(index))
+    if (_.isEmpty(containerName)) { containerName = 'home' }
 
     return (
       <div id="app">
-        <div id={ containerName } className="react-container">
+        <div id={ containerName }
+        className={ classNames({ 'react-container': true, 'object-focus': objectified.focus }) }>
           <GlobalNavbar/>
           <div id="contents">
             { children }
