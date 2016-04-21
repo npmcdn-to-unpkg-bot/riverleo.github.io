@@ -44,11 +44,11 @@ export default class GlobalNavbar extends Component {
             <LinkContainer to="/" onlyActiveOnIndex>
               <NavItem>home</NavItem>
             </LinkContainer>
-            <LinkContainer to="/doodle">
-              <NavItem>doodle</NavItem>
-            </LinkContainer>
             <LinkContainer to="/objectified">
               <NavItem>objectified</NavItem>
+            </LinkContainer>
+            <LinkContainer to="/documents">
+              <NavItem>documents</NavItem>
             </LinkContainer>
           </Nav>
           <Nav right>
