@@ -3,7 +3,7 @@ import 'styles/components/global-navbar.scss'
 import $ from 'jquery'
 import _ from 'lodash'
 import cn from 'classnames'
-import store from 'store'
+import { connect } from 'react-redux'
 import { sprintf } from 'underscore.string'
 
 import { Component } from 'react'
@@ -11,13 +11,19 @@ import { Link } from 'react-router'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, NavItem } from 'react-bootstrap'
 
-export default class GlobalNavbar extends Component {
+export class GlobalNavbar extends Component {
+  constructor (props) {
+    super(props)
+
+    this.handleScroll = _.throttle(this.handleScroll.bind(this), 50)
+  }
+
   componentDidMount () {
-    window.addEventListener('scroll', _.throttle(this.handleScroll.bind(this), 50))
+    window.addEventListener('scroll', this.handleScroll)
   }
 
   componentWillUnmount () {
-    window.removeEventListener('scroll', _.throttle(this.handleScroll.bind(this)))
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
   handleScroll () {
@@ -30,7 +36,7 @@ export default class GlobalNavbar extends Component {
 
   render () {
     const { top, down } = this.state || {}
-    const { me } = store.getState().instagram
+    const { me, meStatus } = this.props.instagram
 
     return (
       <div id="global-navbar" className={ cn({ top, [down ? 'down' : 'up']: true }) }>
@@ -51,16 +57,26 @@ export default class GlobalNavbar extends Component {
               <NavItem>documents</NavItem>
             </LinkContainer>
           </Nav>
-          <Nav right>
-            <LinkContainer to="/about">
-              <NavItem className="about"
-              style={{ backgroundImage: sprintf('url("%s")', me.profile_picture) }}>
-                <span className="text-hide">profile</span>
-              </NavItem>
-            </LinkContainer>
-          </Nav>
+          {
+            (() => {
+              if (!_.isEqual(meStatus, 'success')) { return }
+
+              return (
+                <Nav pullRight>
+                  <LinkContainer to="/about">
+                    <NavItem className="about"
+                    style={{ backgroundImage: sprintf('url("%s")', me.profile_picture) }}>
+                      <span className="text-hide">profile</span>
+                    </NavItem>
+                  </LinkContainer>
+                </Nav>
+              )
+            })()
+          }
         </Navbar>
       </div>
     )
   }
 }
+
+export default connect(state => state)(GlobalNavbar)

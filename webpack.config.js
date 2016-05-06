@@ -3,7 +3,7 @@ var webpack = require('webpack')
 var bourbon = require('node-bourbon').includePaths
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: '#cheap-module-eval-source-map',
   entry: [
     './app/index.js'
   ],
@@ -29,6 +29,7 @@ module.exports = {
     lodash: '_',
     react: 'React',
     jquery: 'jQuery',
+    moment: 'moment',
     superagent: 'superagent',
     'react-dom': 'ReactDOM',
     'underscore.string': 's',

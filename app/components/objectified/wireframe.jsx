@@ -1,4 +1,4 @@
-import 'styles/components/wireframe.scss'
+import 'styles/components/objectified/wireframe.scss'
 
 import _ from 'lodash'
 import classNames from 'classnames'

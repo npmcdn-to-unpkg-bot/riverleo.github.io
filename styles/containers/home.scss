@@ -4,9 +4,25 @@
   padding: 0;
   background-color: #1a1a1a;
 
+  #global-navbar {
+    .navbar {
+      border-bottom-color: transparent;
+      background-color: transparent;
+    }
+
+    .navbar-center {
+      background-color: transparent;
+    }
+
+    .navbar-brand,
+    .navbar-center li.active a {
+      color: white;
+    }
+  }
 
   #contents {
     padding: 0;
+    background-color: transparent;
   }
 
   .window,

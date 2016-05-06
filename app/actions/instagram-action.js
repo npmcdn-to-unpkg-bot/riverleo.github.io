@@ -19,9 +19,9 @@ export const __mediaFetch__ = createAction(MEDIA_FETCH)
  * ============================================================ */
 
 export const me = () => (dispatch, getState) => {
-  const { mediaStatus } = getState().instagram
+  const { meStatus } = getState().instagram
 
-  if (_.includes(['request', 'success'], mediaStatus)) { return }
+  if (_.includes(['request', 'success'], meStatus)) { return }
 
   dispatch(__me__({ meStatus: 'request' }))
 

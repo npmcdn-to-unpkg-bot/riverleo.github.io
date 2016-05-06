@@ -1,0 +1,44 @@
+.object {
+  .panel {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .panel-body {
+    position: relative;
+    padding-bottom: 90%;
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+    background-color: white;
+  }
+
+  .panel-footer {
+    padding: 10px 0 0;
+    text-align: center;
+
+    dl {
+      margin: 0;
+    }
+
+    dt {
+      font-size: 20px;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    dd {
+      opacity: 0.5;
+    }
+  }
+}
+
+/* =================================================
+ * Object Focus
+ * ================================================= */
+
+#objectified.object-focus .object {
+  .panel-body {
+    background-color: transparent;
+  }
+}
+

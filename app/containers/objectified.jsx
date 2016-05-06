@@ -1,12 +1,18 @@
 import 'styles/containers/objectified.scss'
 
+import store from 'store'
+import { objectified } from 'actions'
+
 import { Component } from 'react'
 import { Objects } from 'components/objectified'
 import { Grid, Col } from 'react-bootstrap'
 
 export default class Objectified extends Component {
-  render () {
+  componentDidMount () {
+    store.dispatch(objectified.mouseLeave())
+  }
 
+  render () {
     return (
       <Grid>
         <Col xs={ 12 } sm={ 4 }>

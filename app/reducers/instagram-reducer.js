@@ -5,7 +5,7 @@ import { handleActions } from 'redux-actions'
 
 const initialState = {
   me: {},
-  medias: {}
+  media: {}
 }
 
 export default handleActions({

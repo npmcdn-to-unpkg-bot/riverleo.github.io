@@ -1,0 +1,79 @@
+.document-single-item {
+  padding: 10px;
+
+  .panel {
+    margin: 0;
+    padding: 15px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    background-color: white;
+  }
+
+  .panel-heading {
+    margin-bottom: 15px;
+
+    time,
+    .label {
+      font-size: 13px;
+    }
+
+    time {
+      color: #666;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    .tags {
+      .label {
+        color: #1a1a1a;
+        font-weight: 600;
+        background-color: transparent;
+
+        &:after {
+          content: ', ';
+        }
+
+        &:last-child:after {
+          content: '';
+        }
+      }
+    }
+  }
+
+  .panel-body {
+    img {
+      margin-bottom: 15px;
+    }
+
+    .hgroup {
+      .title {
+        margin-bottom: 5px;
+        font-size: 28px;
+        font-weight: 600;
+        font-family: 'Open Sans', 'KoPub Batang', sans-serif;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .panel-footer {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+    .shares,
+    .actions {
+      .btn {
+        margin: 0 2px;
+        padding: 0;
+        border: 0;
+        color: #bbb;
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+  }
+}
