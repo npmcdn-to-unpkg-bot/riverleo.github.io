@@ -1,4 +1,14 @@
-#documents {
+@import '../contrib/responsive';
+
+#documents #contents {
+  .document-single-item {
+    padding: 10px;
+
+    @include respond-to(xs) {
+      padding: 15px;
+    }
+  }
+
   aside {
     .panel {
       margin: 0;

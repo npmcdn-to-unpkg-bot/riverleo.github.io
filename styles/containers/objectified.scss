@@ -1,4 +1,15 @@
 @import 'bourbon';
+@import '../contrib/responsive';
+
+#objectified #contents {
+  .object {
+    padding: 10px;
+
+    @include respond-to(xs) {
+      padding: 15px;
+    }
+  }
+}
 
 /* =================================================
  * Object Focus
