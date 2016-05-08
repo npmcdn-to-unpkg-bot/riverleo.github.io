@@ -1,34 +1,15 @@
 @import '../contrib/responsive';
 
 #documents #contents {
-  .document-single-item {
-    padding: 10px;
+  position: relative;
 
-    @include respond-to(xs) {
-      padding: 15px;
-    }
-  }
+  .document-item {
+    padding: 20px;
 
-  aside {
-    .panel {
-      margin: 0;
-      padding: 10px;
-    }
-
-    .panel-heading {
-      padding-bottom: 10px;
-      font-weight: 600;
-      text-transform: capitalize;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .list-group-item {
-      background-color: transparent;
-    }
-
-    .empty-state {
-      padding: 100px 0;
-      text-align: center;
+    @include responds-to(sm, md, lg) {
+      float: initial;
+      display: inline-block;
+      vertical-align: bottom;
     }
   }
 }

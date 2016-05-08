@@ -1,76 +1,40 @@
 .document-single-item {
   .panel {
     margin: 0;
-    padding: 15px;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-    background-color: white;
   }
 
-  .panel-heading {
-    margin-bottom: 15px;
-
-    time,
-    .label {
-      font-size: 13px;
-    }
-
+  .panel-footer {
     time {
       color: #666;
+      font-size: 12px;
       font-weight: 300;
-    }
-
-    .tags {
-      .label {
-        color: #1a1a1a;
-        font-weight: 600;
-        background-color: transparent;
-
-        &:after {
-          content: ', ';
-        }
-
-        &:last-child:after {
-          content: '';
-        }
-      }
+      text-transform: uppercase;
     }
   }
 
   .panel-body {
-    img {
-      margin-bottom: 15px;
+    .title-image {
+      img {
+        width: 100%;
+      }
     }
 
     .hgroup {
+      margin-top: 10px;
+
+      .title,
+      .subtitle {
+        font-size: 14px;
+      }
+
       .title {
-        font-size: 28px;
         font-weight: 600;
-        font-family: 'Open Sans', 'KoPub Batang', sans-serif;
       }
 
       .subtitle {
         margin-top: 5px;
         color: #a3a3a3;
-        font-size: 18px;
-        font-weight: 300;
-      }
-    }
-  }
-
-  .panel-footer {
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-
-    .shares,
-    .actions {
-      .btn {
-        margin: 0 2px;
-        padding: 0;
-        border: 0;
-        color: #bbb;
-        font-size: 12px;
-        font-weight: 400;
+        font-weight: 100;
       }
     }
   }

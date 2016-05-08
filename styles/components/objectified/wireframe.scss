@@ -199,14 +199,14 @@
  * ======================================================================== */
 
 .wireframe .active .block {
-  border-color: rgba(0, 0, 0, 0.15);
-  background-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .object:hover .wireframe .block.active,
 .object:hover .wireframe .active .block {
   border-color: #FF4949;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .object:hover .panel-footer dt,
