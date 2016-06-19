@@ -1,15 +1,8 @@
 @import '../contrib/responsive';
 
 #documents #contents {
-  position: relative;
-
-  .document-item {
-    padding: 20px;
-
-    @include responds-to(sm, md, lg) {
-      float: initial;
-      display: inline-block;
-      vertical-align: bottom;
-    }
+  .document-list {
+    max-width: 600px;
+    margin: 0 auto;
   }
 }

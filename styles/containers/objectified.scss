@@ -2,7 +2,9 @@
 @import '../contrib/responsive';
 
 #objectified #contents {
-  .object {
+  padding-top: 10px;
+
+  .object-item {
     padding: 10px;
 
     @include respond-to(xs) {

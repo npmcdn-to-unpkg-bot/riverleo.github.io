@@ -1,25 +1,26 @@
-import 'styles/containers/documents.scss'
+import 'styles/containers/documents.scss';
 
-import { Component } from 'react'
-import { Grid, Col } from 'react-bootstrap'
-import { DocumentSingleItem } from 'components/documents'
+import React from 'react';
+import { DocumentItem } from 'components/documents';
 
-export default class Documents extends Component {
-  render () {
-    return (
-      <div>
-        <Grid>
-          <Col className="document-item" sm={ 3 }>
-            <DocumentSingleItem
-              doc={{
-                title: 'title',
-                subtitle: 'subtitle',
-                title_image_url: 'https://cdn-images-1.medium.com/max/166/1*dIbM7ZVxH5VRU-v5AvAzQQ.jpeg'
-              }}
-            />
-          </Col>
-        </Grid>
-      </div>
-    )
-  }
-}
+const title_image_url = 'https://cdn-images-1.medium.com/max/166/1*dIbM7ZVxH5VRU-v5AvAzQQ.jpeg';
+
+export const Documents = () =>
+  <div className="document-list">
+    <DocumentItem
+      doc={{
+        title: 'title',
+        subtitle: 'subtitle',
+        title_image_url,
+      }}
+    />
+    <DocumentItem
+      doc={{
+        title: 'title',
+        subtitle: 'subtitle',
+        title_image_url,
+      }}
+    />
+  </div>;
+
+export default Documents;

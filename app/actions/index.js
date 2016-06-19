@@ -1,5 +1,5 @@
-import * as instagramAction from './instagram-action'
-import * as objectifiedAction from './objectified-action'
+import * as instagramAction from './instagram-action';
+import * as objectifiedAction from './objectified-action';
 
-export const instagram = instagramAction
-export const objectified = objectifiedAction
+export const instagram = instagramAction;
+export const objectified = objectifiedAction;

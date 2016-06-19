@@ -203,13 +203,13 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.object:hover .wireframe .block.active,
-.object:hover .wireframe .active .block {
+.object-item:hover .wireframe .block.active,
+.object-item:hover .wireframe .active .block {
   border-color: #FF4949;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.object:hover .panel-footer dt,
-.object:hover .panel-footer dd {
+.object-item:hover .panel-footer dt,
+.object-item:hover .panel-footer dd {
   color: white;
 }

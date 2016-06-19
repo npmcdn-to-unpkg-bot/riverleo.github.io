@@ -1,24 +1,28 @@
-import 'styles/containers/objectified.scss'
+import 'styles/containers/objectified.scss';
 
-import store from 'store'
-import { objectified } from 'actions'
+import store from 'store';
+import { objectified } from 'actions';
 
-import { Component } from 'react'
-import { Objects } from 'components/objectified'
-import { Grid, Col } from 'react-bootstrap'
+import React, { Component } from 'react';
+import { ObjectItem } from 'components/objectified';
+import { Grid, Col } from 'react-bootstrap';
 
 export default class Objectified extends Component {
-  componentDidMount () {
-    store.dispatch(objectified.mouseLeave())
+  componentDidMount() {
+    store.dispatch(objectified.mouseLeave());
   }
 
-  render () {
+  render() {
     return (
       <Grid>
-        <Col xs={ 12 } sm={ 4 }>
-          <Objects title="Navigation Bar" subtitle="subtitle" active="navbar"/>
+        <Col xs={12} sm={6} md={4}>
+          <ObjectItem
+            title="Navigation Bar"
+            subtitle="subtitle"
+            active="navbar"
+          />
         </Col>
       </Grid>
-    )
+    );
   }
 }

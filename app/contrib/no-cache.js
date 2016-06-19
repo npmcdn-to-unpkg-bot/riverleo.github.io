@@ -1,19 +1,23 @@
 const with_query_strings = (request) => {
-  if (request._query.length == 0) {
-    request._query = [Date.now().toString()]
+  /* eslint-disable no-underscore-dangle */
+  const r = request;
+  if (r._query.length === 0) {
+    r._query = [Date.now().toString()];
   } else {
-    request._query[0] += '&' + Date.now().toString()
+    r._query[0] += `&${Date.now().toString()}`;
   }
+  /* eslint-enable */
 
-  return request
-}
+  return r;
+};
 
 export default (request) => {
-  request.set('X-Requested-With', 'XMLHttpRequest')
-  request.set('Expires', '-1')
-  request.set('Cache-Control', 'no-cache,no-store,must-revalidate,max-age=-1,private')
+  const r = request;
+  r.set('X-Requested-With', 'XMLHttpRequest');
+  r.set('Expires', '-1');
+  r.set('Cache-Control', 'no-cache,no-store,must-revalidate,max-age=-1,private');
 
-  with_query_strings(request)
+  with_query_strings(r);
 
-  return request
-}
+  return r;
+};

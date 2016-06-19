@@ -1,13 +1,10 @@
-import 'styles/components/documents/document-collection-item.scss'
+import 'styles/components/documents/document-collection-item.scss';
 
-import { Component } from 'react'
+import React from 'react';
 
-export default class DocumentCollectionItem extends Component {
-  render () {
-    return (
-      <div className="document-collection-item">
-        document-collection-item
-      </div>
-    )
-  }
-}
+export const DocumentCollectionItem = () =>
+  <div className="document-collection-item">
+    document-collection-item
+  </div>;
+
+export default DocumentCollectionItem;
